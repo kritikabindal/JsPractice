@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>
+        Cal
+    </title>
+    <script>
+        // num oper num = result
+
+        function add() {
+            console.log('Hi');
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+            // const num1 = Number(document.getElementById("num1").value);
+            // const num2 = Number(document.getElementById("num2").value);
+            // // console.log('Hii', num1, num2);
+
+
+            // document.getElementById("result").value = Number(num1) + Number(num2);
+            document.getElementById("result").value = parseInt(num1) + parseInt(num2);
+
+            // reading and trying convert into integer(parse+Int)
+            // 20abc+30=50;
+            // without Parse result=NaN
+        }
+        function sub() {
+
+            const num1 = Number(document.getElementById("num1").value);
+            const num2 = Number(document.getElementById("num2").value);
+            if (num1 > num2) {
+                document.getElementById("result").value = num1 - num2;
+            }
+            else
+                alert("num1 should be greater");
+            // document.getElementById("result").value = Number(num1) - Number(num2);
+
+
+
+        }
+        function mul() {
+
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+            document.getElementById("result").value = Number(num1) * Number(num2);
+
+
+        }
+        function div() {
+
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+            if (Number(num2) > 0) {
+                document.getElementById("result").value = Number(num1) % Number(num2);
+
+            }
+            else {
+                alert("cannot divide by 0");
+            }
+
+
+        }
+
+        function clr() {
+            const num1 = document.getElementById("num1").value;
+            // document.getElementById("num1").value = Math.floor(Number(num1) / 10);
+            // document.getElementById("num1").value = num1.slice(0, -1);
+            document.getElementById("num1").value = num1.substring(0, num1.length - 1); // delete the last 1 digit 
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <input type="value" id="num1">
+        <input type="value" id="num2">
+        <input type="value" disabled id="result">
+        <button type="button" onclick="add()">+ </button>
+        <button type="button" onclick="sub()">- </button>
+        <button type="button" onclick="mul()">* </button>
+        <button type="button" onclick="div()">% </button>
+        <button type="button" onclick="clr()">clr </button>
+
+</body>
+
+</html>
